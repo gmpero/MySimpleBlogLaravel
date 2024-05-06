@@ -21,17 +21,18 @@
         <!-- /.content-header -->
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
-                <div class="row mb-2 pl-2">
-                    <form>
+            <div class="row mb-2 pl-2">
+                <div class="col-6">
+                    <form action="{{route('admin.category.store')}}" method="POST">
+                        @csrf
+                        @method('POST')
                         <div class="mb-3">
-                            <input type="text" class="form-control"  placeholder="Введите категорию" >
+                            <input type="text" name="title" class="form-control" placeholder="Введите категорию">
                         </div>
-                        <button type="submit" class="btn btn-primary">Создать</button>
+                        <button type="submit" class="btn btn-primary  w-100">Создать</button>
                     </form>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div>
         </section>
         <!-- /.content -->
     </div>

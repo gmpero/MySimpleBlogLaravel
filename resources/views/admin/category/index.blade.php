@@ -47,7 +47,7 @@
                                     </a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="#" class="text-green">
+                                    <a href="{{route('admin.category.edit', $category->id)}}" class="text-green">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
                                 </td>

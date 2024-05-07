@@ -27,6 +27,40 @@
                     <div class="col-lg-3 col-6">
                         <a href="{{route('admin.category.create')}}" class="btn btn-primary">Добавить категорию</a>
                     </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Название</th>
+                                <th colspan="3" class="text-center">Действия</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($categories as $category)
+                            <tr>
+                                <td>{{$category->id}}</td>
+                                <td>{{$category->title}}</td>
+                                <td class="text-center">
+                                    <a href="#" class="text-blue">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="text-green">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="text-red">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>

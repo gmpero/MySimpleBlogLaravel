@@ -23,9 +23,9 @@
         <section class="content">
             <div class="row mb-2 pl-2">
                 <div class="col-6">
-                    <form action="{{route('admin.category.store')}}" method="POST">
+                    <form action="{{route('admin.category.update', $category->id)}}" method="POST">
                         @csrf
-                        @method('POST')
+                        @method('PATCH')
                         <div class="mb-3">
                             <input type="text" name="title" class="form-control" placeholder="Введите категорию" value="{{$category->title}}">
                         </div>

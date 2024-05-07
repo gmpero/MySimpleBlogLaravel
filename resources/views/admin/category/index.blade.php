@@ -52,9 +52,13 @@
                                     </a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="#" class="text-red">
-                                        <i class="far fa-trash-alt"></i>
-                                    </a>
+                                    <form action="{{route('admin.category.delete', $category->id)}}" method="POST">
+                                        @CSRF
+                                        @method('DELETE')
+                                        <button type="submit" class="text-danger border-0 bg-transparent">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

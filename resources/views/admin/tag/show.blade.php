@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Категория <span class="font-weight-bold text-blue">{{$category->title}}</span></h1>
+                        <h1 class="m-0">Тег <span class="font-weight-bold text-blue">{{$tag->title}}</span></h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -34,8 +34,8 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{{$category->id}}</td>
-                                <td>{{$category->title}}</td>
+                                <td>{{$tag->id}}</td>
+                                <td>{{$tag->title}}</td>
                             </tr>
                             </tbody>
                         </table>

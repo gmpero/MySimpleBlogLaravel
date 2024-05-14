@@ -23,7 +23,7 @@
         <section class="content">
             <div class="row mb-2 pl-2">
                 <div class="col-6">
-                    <form action="{{route('admin.post.store')}}" method="POST">
+                    <form action="{{route('admin.post.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('POST')
                         <div class="mb-3">
@@ -32,7 +32,13 @@
                         <div class="mb-3">
                             <textarea name="content" class="form-control" rows="3" placeholder="Основной текст"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary  w-100">Создать</button>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Фото</label>
+                            <input name="image" class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary  w-100">Создать</button>
+                        </div>
                     </form>
                 </div>
             </div>

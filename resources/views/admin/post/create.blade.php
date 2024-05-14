@@ -30,7 +30,8 @@
                             <input type="text" name="title" class="form-control" placeholder="Заголовок">
                         </div>
                         <div class="mb-3">
-                            <textarea name="content" class="form-control" rows="3" placeholder="Основной текст"></textarea>
+                            <textarea name="content" class="form-control" rows="3"
+                                      placeholder="Основной текст"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Фото</label>
@@ -38,9 +39,18 @@
                         </div>
                         <div class="mb-3">
                             <select class="form-select" name="category_id">
-                                <option selected>Откройте это меню выбора категории</option>
+                                <option selected disabled>Откройте это меню выбора категории</option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->id}}">{{$category->title}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select name="tag_ids[]" class="select2" multiple="multiple" data-placeholder="Выберите тэги"
+                                    style="width: 100%;">
+                                <option disabled>Выберите теги</option>
+                                @foreach($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->title}}</option>
                                 @endforeach
                             </select>
                         </div>

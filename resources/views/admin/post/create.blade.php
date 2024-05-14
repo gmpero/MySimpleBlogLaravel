@@ -27,7 +27,10 @@
                         @csrf
                         @method('POST')
                         <div class="mb-3">
-                            <input type="text" name="title" class="form-control" placeholder="Введите категорию">
+                            <input type="text" name="title" class="form-control" placeholder="Заголовок">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="content" class="form-control" rows="3" placeholder="Основной текст"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary  w-100">Создать</button>
                     </form>

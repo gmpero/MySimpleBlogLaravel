@@ -37,6 +37,14 @@
                             <input name="image" class="form-control" type="file" id="formFile">
                         </div>
                         <div class="mb-3">
+                            <select class="form-select" name="category_id">
+                                <option selected>Откройте это меню выбора категории</option>
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <button type="submit" class="btn btn-primary  w-100">Создать</button>
                         </div>
                     </form>

@@ -27,7 +27,13 @@
                         @csrf
                         @method('POST')
                         <div class="mb-3">
-                            <input type="text" name="title" class="form-control" placeholder="Введите тег">
+                            <input type="text" name="name" class="form-control" placeholder="Введите имя">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
                         <button type="submit" class="btn btn-primary  w-100">Создать</button>
                     </form>

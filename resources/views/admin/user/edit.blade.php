@@ -27,9 +27,14 @@
                         @csrf
                         @method('PATCH')
                         <div class="mb-3">
-                            <input type="text" name="title" class="form-control" placeholder="Введите категорию" value="{{$user->title}}">
+                            <input type="text" name="name" class="form-control" placeholder="Имя" value="{{$user->name}}">
                         </div>
-                        <button type="submit" class="btn btn-primary  w-100">Обновить</button>
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email" value="{{$user->email}}">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary  w-100">Обновить</button>
+                        </div>
                     </form>
                 </div>
             </div>

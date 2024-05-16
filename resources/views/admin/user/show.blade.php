@@ -29,13 +29,13 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Название</th>
+                                <th>Имя</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <td>{{$user->id}}</td>
-                                <td>{{$user->title}}</td>
+                                <td>{{$user->name}}</td>
                             </tr>
                             </tbody>
                         </table>

@@ -33,6 +33,14 @@
                             <input type="email" name="email" class="form-control" placeholder="Email" value="{{$user->email}}">
                         </div>
                         <div class="mb-3">
+                            <select class="form-select" name="role">
+                                <option selected disabled>Выберите роль</option>
+                                @foreach($roles as $id => $role)
+                                    <option value="{{$id}}">{{$role}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <button type="submit" class="btn btn-primary  w-100">Обновить</button>
                         </div>
                     </form>

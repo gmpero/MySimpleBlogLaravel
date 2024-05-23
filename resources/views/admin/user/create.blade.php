@@ -35,7 +35,17 @@
                         <div class="mb-3">
                             <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
-                        <button type="submit" class="btn btn-primary  w-100">Создать</button>
+                        <div class="mb-3">
+                            <select class="form-select" name="role">
+                                <option selected disabled>Выберите роль</option>
+                                @foreach($roles as $id => $role)
+                                    <option value="{{$id}}">{{$role}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary  w-100">Создать</button>
+                        </div>
                     </form>
                 </div>
             </div>

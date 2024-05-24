@@ -45,7 +45,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <form action="{{'logout'}}" method="post">
+                    <form action="{{url('/logout')}}" method="post">
                         @csrf
                         <input type="submit" class="btn" value="Выйти">
                     </form>

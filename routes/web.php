@@ -19,7 +19,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
 });
 
-//Route::get('logout', ['LoginController', 'logout']);
+//Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
+//    Route::get('logout', ['LoginController', 'logout']);
+//});
+
+
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware'=>['auth','admin']], function () {
     Route::group(['namespace' => 'Main'], function () {

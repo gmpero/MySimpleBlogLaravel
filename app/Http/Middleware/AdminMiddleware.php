@@ -18,7 +18,7 @@ class AdminMiddleware
     {
         if((int) auth()->user()->role !== User::ROLE_ADMIN)
         {
-            abort(404);
+            return redirect()->route('personal.main.index');
         }
 
         return $next($request);

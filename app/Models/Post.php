@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -12,6 +13,12 @@ class Post extends Model
     use SoftDeletes;
     protected $table = 'posts';
     protected $guarded = false;
+
+
+    protected function getShortContentAttribute(): string
+    {
+        return Str::words((string)$this['content'], 10);
+    }
 
     public function tags()
     {

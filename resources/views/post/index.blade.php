@@ -25,13 +25,13 @@
                 @foreach($posts as $post)
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="#">
+                        <a href="{{route('post.post', $post->id)}}">
                             <h2 class="post-title">{{$post->title}}</h2>
                             <h3 class="post-subtitle">{{$post->short_content}}</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#">Start Bootstrap</a>
+                            <a href="">Start Bootstrap</a>
                             on September 24, 2023
                         </p>
                     </div>

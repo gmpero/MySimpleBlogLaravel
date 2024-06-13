@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
+
+/**
+ * @method find($id)
+ */
 class Post extends Model
 {
     use HasFactory;

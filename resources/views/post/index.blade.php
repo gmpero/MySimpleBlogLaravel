@@ -30,9 +30,8 @@
                             <h3 class="post-subtitle">{{$post->short_content}}</h3>
                         </a>
                         <p class="post-meta">
-                            Posted by
-                            <a href="">Start Bootstrap</a>
-                            on September 24, 2023
+                            Опубликовано
+                            {{$post['created_at']->translatedFormat('d M Y')}}
                         </p>
                     </div>
                     <!-- Divider-->

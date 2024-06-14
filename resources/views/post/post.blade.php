@@ -11,7 +11,7 @@
                     <span class="meta">
                                 Posted by
                                 <a href="#!">Start Bootstrap</a>
-                                on August 24, 2023
+                               {{$data->translatedFormat('Y-m-d')}}
                             </span>
                 </div>
             </div>

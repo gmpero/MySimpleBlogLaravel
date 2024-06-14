@@ -29,8 +29,27 @@
                     <p>{{$post->content}}</p>
                     <p>
                         Placeholder text by
-
                     </p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="text-bg-light">
+        <hr>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="my-5">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                            <br />
+                            <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

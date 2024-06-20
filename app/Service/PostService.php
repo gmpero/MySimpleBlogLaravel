@@ -31,8 +31,8 @@ class PostService
             DB::beginTransaction();
             $tagIds = $data['tag_ids'];
             unset($data['tag_ids']);
-
-            if (isset($data['preview_image'])) {
+            //@dd($data['preview_image']);
+            if (isset($data['image'])) {
                 $data['image'] = Storage::disk('public')->put('/images', $data['image']);
             }
             $post->update($data);

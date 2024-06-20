@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class CommentUserLike extends Model
 {
     use HasFactory;
 
-    protected $table = 'comments';
+    protected $table = 'comment_user_likes';
     protected $guarded = false;
-
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    }
 }

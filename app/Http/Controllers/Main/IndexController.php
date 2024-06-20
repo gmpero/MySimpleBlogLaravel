@@ -10,6 +10,6 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        return redirect('post.index');
+        return redirect(route('post.index'));
     }
 }

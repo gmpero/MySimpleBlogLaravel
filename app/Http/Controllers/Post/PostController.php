@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 class PostController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(Post $post)
     {
-        $post = Post::find($id);
+
         $data = Carbon::parse($post['created_at']);
         return view('post.post', compact('post', 'data'));
     }

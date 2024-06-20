@@ -24,6 +24,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Post', 'prefix' => 'posts'], 
         Route::get('/{post}', 'PostController')->name('post.post');
         Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function () {
             Route::post('/', 'StoreController')->name('post.comment.store');
+            Route::post('/like', 'LikeController')->name('post.comment.like');
         });
 });
 

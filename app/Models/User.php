@@ -17,6 +17,7 @@ class User extends Authenticatable
     const ROLE_ADMIN = 0;
     const ROLE_READER = 1;
 
+
     public static function getRoles()
     {
         return [
@@ -56,4 +57,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function likedComments()
+    {
+        return $this->belongsToMany(Comment::class, 'comment_user_likes', 'user_id', 'comment_id');
+    }
 }

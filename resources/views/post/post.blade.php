@@ -21,7 +21,7 @@
 @endsection
 
 @section('content')
-    <!-- Post Content-->
+    <!--Вывод поста-->
     <article class="mb-4">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -34,11 +34,13 @@
             </div>
         </div>
     </article>
+    <!--Блок для комментариев-->
     <article class="text-bg-light">
         <hr>
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!--Вывод комментариев-->
                     <div class="my-5">
                         <div class="comment-list">
                             @foreach($post->comments as $comment)
@@ -50,32 +52,53 @@
                                     <!-- /.username -->
                                     {{$comment->message}}
                                     <div>
-                                        <form action="">
-                                            <button type="submit" class="border-0 bg-transparent"><i class="fa-regular fa-heart"></i></button>
-                                        </form>
+                                        @guest()
+                                            <div>
+                                                <span>{{$comment->liked_users_count}}</span>
+                                                <i class="far fa-heart"></i>
+                                            </div>
+                                        @endguest
+                                        @auth()
+                                            <form action="{{route('post.comment.like', $post->id)}}" method="POST">
+                                                @csrf
+                                                @method('POST')
+                                                <input type="hidden" name="comment_id" value={{$comment->id}}>
+                                                <button type="submit" class="border-0 bg-transparent">
+                                                    <span>{{$comment->liked_users_count}}</span>
+                                                    @if(auth()->user()->likedComments->contains($comment->id))
+                                                        <i class="fa-regular fa-heart text-danger"></i>
+                                                    @else
+                                                        <i class="fa-regular fa-heart"></i>
+                                                    @endif
+                                                </button>
+                                            </form>
+                                        @endauth
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                     </div>
-                    <div class="my-5">
-                        <form method="POST" action="{{route('post.comment.store', $post->id)}}">
-                            @csrf
-                            @method('POST')
-                            <div class="form-floating">
+                    <!--Форма отправки комментариев-->
+                    @auth()
+                        <div class="my-5">
+                            <form method="POST" action="{{route('post.comment.store', $post->id)}}">
+                                @csrf
+                                @method('POST')
+                                <div class="form-floating">
                                 <textarea name="message" class="form-control" id="message"
                                           placeholder="Enter your message here..." style="height: 12rem"
                                           data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is
-                                    required.
+                                    <label for="message">Message</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is
+                                        required.
+                                    </div>
                                 </div>
-                            </div>
-                            <br/>
-                            <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Отправить
-                            </button>
-                        </form>
-                    </div>
+                                <br/>
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Отправить
+                                </button>
+                            </form>
+                        </div>
+                    @endauth
                 </div>
             </div>
         </div>
